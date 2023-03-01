@@ -98,6 +98,27 @@ Borys Łangowicz
 
 ---
 
+<!-- _class: lead -->
+![bg blur:9px](graphics/1.jpg)
+# Zmiana hasła
+```
+passwd
+```
+
+---
+# man, --help, apropos, info, help
+![bg left](graphics/stop-it.jpg)
+
+```bash
+man polecenie
+polecenie --help 
+apropos słowo_kluczowe
+info polecenie
+help polecenie
+```
+
+---
+
 ## Poruszanie się
 
 ```bash
@@ -113,7 +134,7 @@ cd ~
 cd ../..
 ls /home/user
 mkdir katalog
-pwd
+cd -
 ```
 
 ---
@@ -122,6 +143,7 @@ pwd
 ```bash
 ls -l --all
 ls -la
+tree -L 1
 ```
 
 ```
@@ -168,23 +190,110 @@ komenda > wyjscie.txt 2> błędy.txt
 cat plik | sorted | factor | cowsay   # pipe 
 ```
 
+```
+ _____________
+< Code Meet 6 >
+ -------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
 ---
 
-# Ćwiczenie
-
----
-
-# Rozwiązanie
-
-
----
 # Własność pliku, grupy, użytkownicy
+
+```bash
+sudo chown user:group file/directory # Zmiana właściciela i grupy
+sudo chmod 777 file/directory # zmiana uprawnień
+sudo chmod a-rwx file/directory # zmiana uprawnień
+```
+
+```
+-rw-rw-r-- 1 neloduka_sobe neloduka_sobe    529 lut 26 01:26 copying_demo.html
+drwxrwxr-x 2 neloduka_sobe neloduka_sobe   4096 lut 28 21:34 exercises
+drwxrwxr-x 2 neloduka_sobe neloduka_sobe   4096 lut 28 21:11 graphics
+-rw-rw-r-- 1 neloduka_sobe neloduka_sobe    189 lut 21 22:20 Makefile
+-rw-rw-r-- 1 neloduka_sobe neloduka_sobe 493766 gru 23  2021 pan-tadeusz.txt
+-rw-rw-r-- 1 neloduka_sobe neloduka_sobe     55 lut 20 20:15 README.md
+-rw-rw-r-- 1 neloduka_sobe neloduka_sobe 119410 mar  1 21:07 slides.html
+-rw-rw-r-- 1 neloduka_sobe neloduka_sobe   7073 mar  1 21:07 slides.md
+```
+
+---
+# Lepki bit
+```bash
+sudo chmod a+t file/directory # nadanie lepkiego bitu dla pliku
+sudo chmod 1777 file/directory # nadanie lepkiego bitu dla pliku
+```
+
+```
+drwxrwxrwt 2 user user 4096 Nov  5 01:33 katalog
+```
 
 ---
 # Edytory
+```bash
+nano 
+vim
+gedit # desktop
+```
+![bg left](graphics/nano.png)
 
 ---
 # Procesy
+```bash
+top # pokazywanie procesów
+ps aux # aktualny stan procesów
+killall # zabij procesy związane z programem
+kill # zabij proces
+killx # zabij proces klikając w okno (desktop)
+```
+Przykład
+```
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+neloduk+  220389  0.0  0.0  37780 10696 pts/3    S<+  lut28   0:02 vim slides.md
+neloduk+  257782  0.0  0.0  23180  5152 pts/7    S<s  20:54   0:00 bash
+neloduk+  257856  0.0  0.0  23792  3268 pts/7    R<+  20:56   0:00 ps aux
+```
+---
+## Przeszukiwanie i porównywanie plików
+
+```bash
+grep
+wc
+diff
+uniq
+cmp
+```
+---
+# Lokalizowanie plików
+
+```bash
+locate
+find
+
+```
+
+---
+# Czytanie pilków
+```bash
+cat
+tail
+head
+less
+```
+
+---
+# Sprawdzanie wolnego miejsca
+```bash
+du
+df
+free
+
+```
 
 ---
 # Skrypty
@@ -193,11 +302,46 @@ cat plik | sorted | factor | cowsay   # pipe
 # Shellcheck
 
 ---
-# Dodatkowe narzędzia
+# .bashrc
+
+```bash 
+cat ~/.bashrc
+```
+```
+
+
+```
+
+---
+# Kim jestem? Dokąd zmierzamy? 
+
+```bash
+whoami # jako kto jestem zalogowany
+whatis # opis programu
+whereis # gdzie są pliki programu
+finger user # informacje o użytkowniku
+w # zalogowani użytkownicy
+```
+
+```
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+neloduka :1       :1               pią15   ?xdm?   6:53m  0.01s /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESS
+```
 
 ---
 
-# Szukanie pomocy
+<!-- _class: lead -->
+![bg blur:9px brightness:0.7](graphics/10.jpg)
+# Zadania
+
+---
+
+# Pan Tadeusz
+> W "Panu Tadeuszu" Adama Mickiewicza wielokrotnie pada słowo "ostatni", którym narrator podkreśla, że świat, który opisał należy do przeszłości. Epopeja jest opowieścią o ostatnim zajeździe na Litwie. 
+
+### Sprawdźmy, czy poloniści się mylili!
+aby pobrać plik:
+`wget https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt`
 
 ---
 
