@@ -1,6 +1,5 @@
 #!/bin/bash
 
-echo "Only for presentation purposes, do not run this - can remove your files!"
 exit 255
 
 WORKING_DIR=$1

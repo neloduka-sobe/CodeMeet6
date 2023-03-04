@@ -25,18 +25,30 @@ ul li::before {
 }
 </style>
 
+# Instalujemy Putty/SSH
+![bg blur:9px](graphics/putty.png)
+
+```
+https://www.putty.org/ # Windows/Linux/MacOS w aplikacji okienkowej
+ssh # MacOS/Linux w terminalu
+```
+
+PS. Uwaga na kable!
+
+---
+
 # Obsługa terminala Linux
 
 Borys Łangowicz
 
---- 
 <!-- _class: lead -->
 ![bg blur:9px](graphics/1.jpg)
 
-# Co to jest Linux?
-
-
 ---
+<!-- _class: lead -->
+# Co to jest Linux?
+---
+
 <!-- Krótka historia #TODO -->
 ![bg](graphics/2.jpg)
 
@@ -78,7 +90,9 @@ Borys Łangowicz
 * 85% smartfonów
 * 96.3% z 1 000 000 topowych webserwerów
 * Około 90% spółek z Fortune 500
----
+
+ ---
+
 <!-- Łączanie się z serwerem-->
 
 1. Przy użyciu ssh
@@ -86,7 +100,7 @@ Borys Łangowicz
   ssh użytkownik@edu.halpress.team
   ```
 
-2. Putty
+2. Putty (Pobieramy jeśli nie mamy)
 
   * Wybieramy SSH Access
   * Server IP Address: edu.halpress.team
@@ -211,7 +225,7 @@ rm -rf test
 * Usuńcie katalog Ali wraz z podkatalogami
 * Utwórzcie plik ‘starocie.txt’ w taki sposób, aby polecenie ‘ls -l’ pokazywało, że został on założony 1 stycznia 1999 roku.
 * Zmieńcie nazwę pliku 'starocie.txt' na 'odgrzewany_kotlet.txt'
-* Usuncie plik 'odgrzewany_kotlet.txt'
+* Usuńcie plik 'odgrzewany_kotlet.txt'
 ---
 
 # Przekierowania poleceń
@@ -236,7 +250,7 @@ cat plik | sorted | factor | cowsay   # pipe
 
 ---
 # Zadania
-* Zapisz kalendarz z roku 2000 do pliku kalendarz.txt
+* Zapiszcie kalendarz z roku 2000 do pliku kalendarz.txt
 * Posortujcie zawartość jakiegokolwiek pliku tekstowego w porządku alfabetycznym, a następnie napisz podobną komendę, lecz sortującą zawartość numerycznie
 * Dodaj do pliku kalendarz.txt wynik polecenia ls z argumentami: wyświetlającymi wszystkie pliki i posortowane po czasie stworzenia.
 ---
@@ -351,7 +365,7 @@ neloduka_sobe@paula:~/public_html$ find /var/log -name *.log 2> /dev/null
 * Znajdźcie w katalogu / pliki bez uprawnień 777
 * Znajdźcie w katalogu / wszystkie pliki wykonywalne
 * Napiszcie komendę wypisującą ilość pustych plików txt w katalogu
-* Sprawdźcie, żeby komenda dodatkowo usuwała te pliki
+* Sprawcie, żeby komenda dodatkowo usuwała te pliki
 * Napiszcie komendę, która wyczyści wszystkie pliki o rozszerzeniu .log w katalogu
 * Napiszcie komendę, która pokaże wszystkie ścieżki zawierające słowo vim, ale nie zawierają słowa lib.
 ---
