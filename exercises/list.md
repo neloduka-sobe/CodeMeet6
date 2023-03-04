@@ -1,7 +1,3 @@
-1. Założyć w swoim home katalog Ala, następnie w nim katalog ma, wewnątrz katalogu ma utworzyć katalogi kota i psa.
-2.  Przejść do katalogu ./Ala/ma/kota. Założyć podobną strukturę katalogów dla Oli bez używania komendy cd. Sprawdzić strukturę katalogów
-3. Usunąć katalog Ali wraz z podkatalogami
-4. Przejść do najniższego katalogu, następnie z jego wnętrza wypisać pliki i katlogi z katalogu znajdującego się 2 poziomy wyżej.
 5.  Zapisz kalendarz z roku 2000 do pliku
 6. Policz liczbę wszytskich plików i katalogów w dowolnym folderze
 7. Read man ls and write an ls command that lists files in the following manner
@@ -19,4 +15,3 @@ ostatniego dnia za pomoca polecenia postaci find /usr/bin -type f -mtime -1 -pri
 
 12. can you write me a bash command to delete all files in /tmp directory which last modification date is older than 10 days
 
-13. Pobierzcie za pomocą polecenia w get tekst Pana Tadeusza ze strony wolne lektury i policz za pomocą grep'a ile razy występuje tam słowo tak

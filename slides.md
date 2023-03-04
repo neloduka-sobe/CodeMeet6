@@ -60,6 +60,10 @@ Borys Łangowicz
 ![bg contain](graphics/6.webp)
 
 ---
+
+![bg fill](graphics/ubuntu.webp)
+
+---
 <!-- Sailfish OS -->
 ![bg](graphics/6.jpg)
 
@@ -118,7 +122,22 @@ help polecenie
 ```
 
 ---
+# Kim jesteśmy? Dokąd zmierzamy? 
 
+```bash
+whoami # jako kto jestem zalogowany
+whatis # opis programu
+whereis # gdzie są pliki programu
+finger user # informacje o użytkowniku
+w # zalogowani użytkownicy
+```
+
+```
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+neloduka :1       :1               pią15   ?xdm?   6:53m  0.01s /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESS
+```
+
+---
 ## Poruszanie się
 
 ```bash
@@ -139,6 +158,7 @@ cd -
 
 ---
 
+
 ## Argumenty/parametry
 ```bash
 ls -l --all
@@ -158,6 +178,12 @@ drwxrwxr-x  2 neloduka_sobe neloduka_sobe   4096 lut 26 14:21 graphics
 -rw-rw-r--  1 neloduka_sobe neloduka_sobe 107865 lut 27 09:01 slides.html
 -rw-rw-r--  1 neloduka_sobe neloduka_sobe   4260 lut 27 09:01 slides.md
 ```
+
+---
+# Zadania
+* Założcie w swoim home katalog Ala, następnie w nim katalog ma, wewnątrz katalogu ma utworzyć katalogi kota i psa
+* Przejdźcie do katalogu ./Ala/ma/kota i załóżcie podobną strukturę katalogów dla Oli bez używania komendy cd. Sprawdźcie strukturę katalogów
+* Przejdzcie do najniższego katalogu, następnie z jego wnętrza wypiszcie pliki i katalogi z katalogu znajdującego się 2 poziomy wyżej
 
 ---
 
@@ -181,6 +207,13 @@ rm -rf test
 
 ---
 
+# Zadania
+* Usuńcie katalog Ali wraz z podkatalogami
+* Utwórzcie plik ‘starocie.txt’ w taki sposób, aby polecenie ‘ls -l’ pokazywało, że został on założony 1 stycznia 1999 roku.
+* Zmieńcie nazwę pliku 'starocie.txt' na 'odgrzewany_kotlet.txt'
+* Usuncie plik 'odgrzewany_kotlet.txt'
+---
+
 # Przekierowania poleceń
 ```bash
 ls -la > plik.txt # Przekierowanie STDOUT do pliku
@@ -201,6 +234,11 @@ cat plik | sorted | factor | cowsay   # pipe
                 ||     ||
 ```
 
+---
+# Zadania
+* Zapisz kalendarz z roku 2000 do pliku kalendarz.txt
+* Posortujcie zawartość jakiegokolwiek pliku tekstowego w porządku alfabetycznym, a następnie napisz podobną komendę, lecz sortującą zawartość numerycznie
+* Dodaj do pliku kalendarz.txt wynik polecenia ls z argumentami: wyświetlającymi wszystkie pliki i posortowane po czasie stworzenia.
 ---
 
 # Własność pliku, grupy, użytkownicy
@@ -262,44 +300,125 @@ neloduk+  257856  0.0  0.0  23792  3268 pts/7    R<+  20:56   0:00 ps aux
 ## Przeszukiwanie i porównywanie plików
 
 ```bash
-grep
-wc
-diff
-uniq
-cmp
+grep # narzędzie do wyszukiwania wzorców
+wc # word count - policz słowa/linie itp.
+diff # porównywanie dwóch plików
+uniq # zwraca lub pomija powtarzające się linie
+cmp # porównywanie dwóch plików
 ```
+
+```
+diff pan-tadeusz.txt  pan-tadeusz-cp.txt 
+49,51d48
+< Topoli, co go bronią od wiatrów jesieni.
+< Dom mieszkalny niewielki, lecz zewsząd chędogi,
+< I stodołę miał wielką, i przy niej trzy stogi
+```
+
+---
+
+# Pan Tadeusz
+> W "Panu Tadeuszu" Adama Mickiewicza wielokrotnie pada słowo "ostatni", którym narrator podkreśla, że świat, który opisał należy do przeszłości. Epopeja jest opowieścią o ostatnim zajeździe na Litwie. 
+
+### Sprawdźmy, czy poloniści się mylili!
+
+aby pobrać plik:
+`wget https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt`
+
 ---
 # Lokalizowanie plików
 
 ```bash
-locate
-find
+locate # podstawowe lokalizowanie pliku
+sudo updatedb
+find # zaawansowane wyszukiwanie plików
+```
 
+```
+neloduka_sobe@paula:~/public_html$ find /var/log -name *.log 2> /dev/null
+
+/var/log/cloud-init-output.log
+/var/log/update.log
+/var/log/ufw.log
+/var/log/auth.log
+/var/log/alternatives.log
+/var/log/apt/history.log
 ```
 
 ---
+# Zdania
+
+* Znajdźcie w katalogu / pliki bez uprawnień 777
+* Znajdźcie w katalogu / wszystkie pliki wykonywalne
+* Napiszcie komendę wypisującą ilość pustych plików txt w katalogu
+* Sprawdźcie, żeby komenda dodatkowo usuwała te pliki
+* Napiszcie komendę, która wyczyści wszystkie pliki o rozszerzeniu .log w katalogu
+* Napiszcie komendę, która pokaże wszystkie ścieżki zawierające słowo vim, ale nie zawierają słowa lib.
+---
 # Czytanie pilków
 ```bash
-cat
-tail
-head
-less
+cat # Zwraca zawartość pliku
+tail # Zwraca końcową zawartość pliku
+head # Zwraca początkową zawartość pliku
+less # Wygodniejszy do przeglądania niż cat
 ```
+![bg left width:900px fit](graphics/cat.webp)
 
 ---
 # Sprawdzanie wolnego miejsca
 ```bash
-du
-df
-free
-
+du # Zwraca zużycie pamięci przez pliki
+df # Zwraca zużycie pamięci
+free # Ilość wolnej pamięci RAM
 ```
+```
+Filesystem     1K-blocks      Used Available Use% Mounted on
+udev             8049264         0   8049264   0% /dev
+tmpfs            1623948      2308   1621640   1% /run
+/dev/nvme0n1p2  80056888  70792756   5151752  94% /
+/dev/nvme0n1p1    510980    293276    217704  58% /boot/efi
+/dev/nvme0n1p4 409492012 242623592 145993928  63% /home
+```
+
+---
+# Zadania
+* Jaki filesystem zajmuje najwięcej miejsca na serwerze. Podajcie wynik w czytelnym dla człowieka rozmiarze
+* Napiszcie komendę, która zwraca najobszerniejszy spośród katalogów w katalogu, w którym jesteście w czytelnym dla człowieka formacie
 
 ---
 # Skrypty
 
+```
+#!/bin/bash
+
+read -p "Podaj nazwę katalogu: " name
+if [[ ! -d  $name ]];
+then
+  mkdir $name
+fi
+```
+
+```
+http://code.kopernik-leszno.pl/data/files/22/karta-pomocy-bash.pdf
+```
+
 ---
 # Shellcheck
+```
+cd $WORKNG_DIR
+^------------^ SC2164: Use 'cd ... || exit' or 'cd ... || return' in case cd fails.
+   ^---------^ SC2153: Possible misspelling: WORKNG_DIR may not be assigned, but WORKING_DIR is.
+   ^---------^ SC2086: Double quote to prevent globbing and word splitting.
+
+Did you mean: 
+cd "$WORKNG_DIR" || exit
+
+
+In bad.sh line 49:
+	mv config old.config.`date +%s`
+                             ^--------^ SC2046: Quote this to prevent word splitting.
+                             ^--------^ SC2006: Use $(...) notation instead of legacy backticked `...`.
+```
 
 ---
 # .bashrc
@@ -308,40 +427,17 @@ free
 cat ~/.bashrc
 ```
 ```
-
-
-```
-
----
-# Kim jestem? Dokąd zmierzamy? 
-
-```bash
-whoami # jako kto jestem zalogowany
-whatis # opis programu
-whereis # gdzie są pliki programu
-finger user # informacje o użytkowniku
-w # zalogowani użytkownicy
+export PS1=
+"🎅\[\e[33;41m\][\[\e[m\]\[\e[32m\]\u\[\e[m\]\[\e[36m\]@\[\e[m\]\[\e[34m\]\h\[\e[m\]\[\e[33;41m\]]\[\e[m\]🎄 "
+alias ll="ls -alF"
+alias count='find . -type f | wc -l'
 ```
 
 ```
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-neloduka :1       :1               pią15   ?xdm?   6:53m  0.01s /usr/lib/gdm3/gdm-x-session --run-script env GNOME_SHELL_SESS
+bashrcgenerator.com
 ```
 
----
 
-<!-- _class: lead -->
-![bg blur:9px brightness:0.7](graphics/10.jpg)
-# Zadania
-
----
-
-# Pan Tadeusz
-> W "Panu Tadeuszu" Adama Mickiewicza wielokrotnie pada słowo "ostatni", którym narrator podkreśla, że świat, który opisał należy do przeszłości. Epopeja jest opowieścią o ostatnim zajeździe na Litwie. 
-
-### Sprawdźmy, czy poloniści się mylili!
-aby pobrać plik:
-`wget https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt`
 
 ---
 
@@ -351,7 +447,7 @@ aby pobrać plik:
 
 ---
 
-# Katalog /
+![bg contain](graphics/root.jpg)
 
 ---
 
@@ -443,9 +539,7 @@ document.addEventListener('copy', function(e) {
 ![bg left](graphics/pytania.jpg)
 
 ---
-
-# Źródła
-
+### Źródła
 1. pixabay.com
 2. blogs.vmware.com
 3. distrowatch.com
@@ -453,3 +547,5 @@ document.addEventListener('copy', function(e) {
 5. enterpriseappstoday.com
 6. fortune.com
 7. blog.aptmasterclass.com
+8. ubuntu.com
+9. superuser.com
