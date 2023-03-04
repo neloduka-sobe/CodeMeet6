@@ -49,26 +49,21 @@ Borys Łangowicz
 # Co to jest Linux?
 ---
 
-<!-- Krótka historia #TODO -->
 ![bg](graphics/2.jpg)
 
 ---
-<!-- Dystrybucje #TODO -->
 ![bg](graphics/3.png)
 
 ---
 <!-- Jak wiele ich jest wg. truelist.co -->
-<!-- Linux'a łatwo modyfikować -->
 <!-- _class: lead -->
 # Ponad 600 rozwijanych dystrybucji
 ![bg contain left](graphics/4.png)
 
 ---
-<!-- Żarty -->
 ![bg contain](graphics/5.webp)
 
 ---
-<!-- Realne zastosowania - docker -->
 ![bg contain](graphics/6.webp)
 
 ---
@@ -76,15 +71,12 @@ Borys Łangowicz
 ![bg fill](graphics/ubuntu.webp)
 
 ---
-<!-- Sailfish OS -->
 ![bg](graphics/6.jpg)
 
 ---
-<!-- Android -->
 ![bg](graphics/7.png)
 
 ---
-<!-- Dlaczego warto się go nauczyć - zastosowania -->
 # Ale kto tego używa?
 * Wszystkie spośród 500 najmocniejszych superkomputerów
 * 85% smartfonów
@@ -93,7 +85,6 @@ Borys Łangowicz
 
  ---
 
-<!-- Łączanie się z serwerem-->
 
 1. Przy użyciu ssh
   ```bash
@@ -109,7 +100,6 @@ Borys Łangowicz
   * SSH password: hasło
 
 ---
-<!-- Podstawowe komendy #TODO-->
 <!-- _class: lead -->
 # Podstawowe komendy
 ![bg blur:9px brightness:0.7](graphics/10.jpg)
@@ -301,7 +291,7 @@ top # pokazywanie procesów
 ps aux # aktualny stan procesów
 killall # zabij procesy związane z programem
 kill # zabij proces
-killx # zabij proces klikając w okno (desktop)
+xkill # zabij proces klikając w okno (desktop)
 ```
 Przykład
 ```
